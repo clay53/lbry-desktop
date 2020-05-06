@@ -14,6 +14,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
+### Changed
+
+### Fixed
+
+## [0.45.1] - [2020-05-06]
+
+### Added
+
 - Channel content preview on custom invite link page _community pr!_ ([#4040](https://github.com/lbryio/lbry-desktop/pull/4040))
 - Add Tooltips To Channel Action Buttons _community pr!_ ([#4090](https://github.com/lbryio/lbry-desktop/pull/4090))
 - Reenabled repost hiding with corresponding repost email suppression ([#4025](https://github.com/lbryio/lbry-desktop/pull/4025))
