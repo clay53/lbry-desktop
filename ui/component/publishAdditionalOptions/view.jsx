@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import usePersistedState from 'effects/use-persisted-state';
 import { FormField } from 'component/common/form';
 import Button from 'component/button';
+import { LbryFirst } from 'lbry-redux';
+
 import LicenseType from './license-type';
 import Card from 'component/common/card';
 
@@ -15,15 +17,52 @@ type Props = {
   licenseUrl: ?string,
   disabled: boolean,
   updatePublishForm: ({}) => void,
+  useLBRYUploader: boolean,
+  needsYTAuth: boolean,
 };
 
-function PublishAdvanced(props: Props) {
-  const { language, name, licenseType, otherLicenseDescription, licenseUrl, updatePublishForm } = props;
+function PublishAdditionalOptions(props: Props) {
+  const {
+    language,
+    name,
+    licenseType,
+    otherLicenseDescription,
+    licenseUrl,
+    updatePublishForm,
+    useLBRYUploader,
+    needsYTAuth,
+  } = props;
   const [hideSection, setHideSection] = usePersistedState('publish-advanced-options', true);
 
   function toggleHideSection() {
     setHideSection(!hideSection);
   }
+  function signup() {
+    updatePublishForm({ ytSignupPending: true });
+    LbryFirst.ytSignup()
+      .then(response => {
+        console.log(response);
+        updatePublishForm({ needsYTAuth: false, ytSignupPending: false });
+      })
+      .catch(error => {
+        updatePublishForm({ ytSignupPending: false });
+        console.log(error);
+      });
+  }
+
+  React.useEffect(() => {
+    if (useLBRYUploader) {
+      console.log('calling!');
+      LbryFirst.hasYTAuth()
+        .then(response => {
+          console.log(response);
+          updatePublishForm({ needsYTAuth: !response.HasAuth });
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }, [updatePublishForm, useLBRYUploader]);
 
   return (
     <Card
@@ -31,6 +70,29 @@ function PublishAdvanced(props: Props) {
         <React.Fragment>
           {!hideSection && (
             <div className={classnames({ 'card--disabled': !name })}>
+              {!IS_WEB && (
+                <FormField
+                  type="checkbox"
+                  name="use_lbry_uploader_checkbox"
+                  onChange={event => updatePublishForm({ useLBRYUploader: !useLBRYUploader })}
+                  label={
+                    <React.Fragment>
+                      {__('Automagically upload to your youtube channel!')}{' '}
+                      <Button button="link" href="https://lbry.com/faq/lbry-uploader" label={__('Learn More')} />
+                    </React.Fragment>
+                  }
+                />
+              )}
+              {useLBRYUploader && needsYTAuth && !IS_WEB && (
+                <div className="card__actions">
+                  <Button button="primary" onClick={signup} label="Sign in with YouTube!" disabled={false} />
+                  <Button
+                    button="link"
+                    // onClick={clearPublish}
+                    label={__('Cancel')}
+                  />
+                </div>
+              )}
               <FormField
                 label={__('Language')}
                 type="select"
@@ -100,4 +162,4 @@ function PublishAdvanced(props: Props) {
   );
 }
 
-export default PublishAdvanced;
+export default PublishAdditionalOptions;
