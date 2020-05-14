@@ -50,14 +50,7 @@ const WalletPage = (props: Props) => {
                         label={__('Send To Your Address')}
                         onClick={() => doOpenModal(MODALS.WALLET_RECEIVE)}
                       />
-                      <Button
-                        button="alt"
-                        icon={ICONS.SEND}
-                        label={__('Buy Credits')}
-                        onClick={() => {
-                          doOpenModal(MODALS.PURCHASE_CREDITS);
-                        }}
-                      />
+                      <Button button="alt" icon={ICONS.SEND} label={__('Buy Credits')} navigate={`/$/${PAGES.BUY}`} />
                     </div>
                   </div>
                 }

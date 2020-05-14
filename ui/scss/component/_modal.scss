@@ -71,21 +71,6 @@
   }
 }
 
-.modal--iframe {
-  min-height: 350px;
-
-  .card {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  iframe {
-    min-height: 400px;
-    background-color: var(--color-card-background);
-  }
-}
-
 .error-modal__content {
   display: flex;
   padding: 0 var(--spacing-m) var(--spacing-m) var(--spacing-m);

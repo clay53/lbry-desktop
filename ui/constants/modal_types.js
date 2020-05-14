@@ -39,4 +39,3 @@ export const SET_REFERRER = 'set_referrer';
 export const REPOST = 'repost';
 export const SIGN_OUT = 'sign_out';
 export const LIQUIDATE_SUPPORTS = 'liquidate_supports';
-export const PURCHASE_CREDITS = 'purchase_credits';

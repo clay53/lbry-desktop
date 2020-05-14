@@ -40,6 +40,27 @@
   margin-right: auto;
 }
 
+.main--buy {
+  @extend .main--auth-page;
+  max-width: 30rem;
+  min-height: 350px;
+
+  .card {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  iframe {
+    min-height: 400px;
+    background-color: var(--color-card-background);
+  }
+
+  .sm:bg-grey-lighter {
+    background-color: var(--color-card-background);
+  }
+}
+
 .main--empty {
   align-self: center;
   display: flex;

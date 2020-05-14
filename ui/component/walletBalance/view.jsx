@@ -39,19 +39,13 @@ const WalletBalance = (props: Props) => {
             <div className="section__actions">
               <Button button="primary" label={__('Receive LBC')} onClick={() => doOpenModal(MODALS.WALLET_RECEIVE)} />
               <Button button="secondary" label={__('Send LBC')} onClick={() => doOpenModal(MODALS.WALLET_SEND)} />
-              <Button
-                button="alt"
-                label={__('Buy LBC')}
-                onClick={() => {
-                  doOpenModal(MODALS.PURCHASE_CREDITS);
-                }}
-              />
+              <Button button="alt" label={__('Buy LBC')} navigate={`/$/${PAGES.BUY}`} />
             </div>
           }
         />
         <div>
           <React.Fragment>
-            {/* @if TARGET='web' */}
+            {/* @if TARGET='app' */}
             {hasSynced ? (
               <div className="section">
                 <div className="section__flex">
