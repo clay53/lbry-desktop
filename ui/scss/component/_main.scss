@@ -15,16 +15,16 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: var(--header-height);
-  padding: var(--spacing-large);
+  padding: var(--spacing-l);
 
   @media (max-width: $breakpoint-small) {
-    padding: var(--spacing-small);
+    padding: var(--spacing-s);
   }
 }
 
 .main {
   position: relative;
-  width: calc(100% - var(--side-nav-width) - var(--spacing-large));
+  width: calc(100% - var(--side-nav-width) - var(--spacing-l));
 
   @media (max-width: $breakpoint-small) {
     width: 100%;

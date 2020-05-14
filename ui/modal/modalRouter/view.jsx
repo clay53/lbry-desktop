@@ -37,7 +37,8 @@ import ModalMobileNavigation from 'modal/modalMobileNavigation';
 import ModalSetReferrer from 'modal/modalSetReferrer';
 import ModalRepost from 'modal/modalRepost';
 import ModalSignOut from 'modal/modalSignOut';
-import ModalLiquidateSupports from '../modalSupportsLiquidate';
+import ModalSupportsLiquidate from 'modal/modalSupportsLiquidate';
+import ModalPurchaseCredits from 'modal/modalPurchaseCredits';
 
 type Props = {
   modal: { id: string, modalProps: {} },
@@ -136,7 +137,9 @@ function ModalRouter(props: Props) {
     case MODALS.SIGN_OUT:
       return <ModalSignOut {...modalProps} />;
     case MODALS.LIQUIDATE_SUPPORTS:
-      return <ModalLiquidateSupports {...modalProps} />;
+      return <ModalSupportsLiquidate {...modalProps} />;
+    case MODALS.PURCHASE_CREDITS:
+      return <ModalPurchaseCredits {...modalProps} />;
     default:
       return null;
   }
