@@ -826,10 +826,10 @@
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-"@lbry/components@^4.1.5":
-  version "4.1.5"
-  resolved "https://registry.yarnpkg.com/@lbry/components/-/components-4.1.5.tgz#eb6a74c6e17ee9ed46cbb9c590aca10847d18f38"
-  integrity sha512-T/cR5tZvikI/dAE2euJP07+/yi+yO1wkE/4djT8EhCJITF+SZ0CjHG8auNYQ/zQw7H5KQnh/WMYaRVxO54FKLA==
+"@lbry/components@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@lbry/components/-/components-4.2.0.tgz#032ea6b38a26d285e066966c24648de59077d3b6"
+  integrity sha512-URzBixr2udzGn3lvZKVakNtxv8IBsgkibt19XO1hggPptfPgQ7ylLMp9KUtuWkkVUFy0XIiH+A3L2mEWRAUwjA==
 
 "@mapbox/hast-util-table-cell-style@^0.1.3":
   version "0.1.3"
