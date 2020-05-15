@@ -37,9 +37,19 @@ const WalletBalance = (props: Props) => {
           subtitle={__('Available Balance')}
           actions={
             <div className="section__actions">
-              <Button button="primary" label={__('Buy')} navigate={`/$/${PAGES.BUY}`} />
-              <Button button="secondary" label={__('Receive')} onClick={() => doOpenModal(MODALS.WALLET_RECEIVE)} />
-              <Button button="secondary" label={__('Send')} onClick={() => doOpenModal(MODALS.WALLET_SEND)} />
+              <Button button="primary" label={__('Buy')} icon={ICONS.PURCHASE} navigate={`/$/${PAGES.BUY}`} />
+              <Button
+                button="secondary"
+                label={__('Receive')}
+                icon={ICONS.RECEIVE}
+                onClick={() => doOpenModal(MODALS.WALLET_RECEIVE)}
+              />
+              <Button
+                button="secondary"
+                label={__('Send')}
+                icon={ICONS.SEND}
+                onClick={() => doOpenModal(MODALS.WALLET_SEND)}
+              />
             </div>
           }
         />
