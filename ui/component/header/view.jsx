@@ -80,18 +80,16 @@ const Header = (props: Props) => {
       clearPasswordEntry();
 
       if (isSignInPage && !emailToVerify) {
-        return history.goBack();
+        history.goBack();
       }
 
       if (isSignUpPage) {
-        return history.goBack();
+        history.goBack();
       }
 
       if (syncError) {
-        return signOut();
+        signOut();
       }
-
-      history.goBack();
     },
   };
 

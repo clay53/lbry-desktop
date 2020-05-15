@@ -40,7 +40,7 @@ export default function BuyPage(props: Props) {
   }, [url, setUrl, receiveAddress, email]);
 
   return (
-    <Page authPage className="main--buy">
+    <Page noSideNavigation className="main--buy">
       <Card
         title={__('Purchase LBC')}
         subtitle={__('You can purchase LBC now.')}
