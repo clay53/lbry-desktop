@@ -37,7 +37,7 @@ const WalletBalance = (props: Props) => {
           subtitle={__('Available Balance')}
           actions={
             <div className="section__actions">
-              <Button button="primary" label={__('Buy')} icon={ICONS.PURCHASE} navigate={`/$/${PAGES.BUY}`} />
+              <Button button="primary" label={__('Buy')} icon={ICONS.BUY} navigate={`/$/${PAGES.BUY}`} />
               <Button
                 button="secondary"
                 label={__('Receive')}
